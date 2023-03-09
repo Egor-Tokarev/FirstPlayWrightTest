@@ -11,5 +11,3 @@ test('Browser Context Playright test', async ({ browser }) => {
     console.log (await page.locator("[style*='block']").textContent());
     await expect (page.locator("[style*='block']")).toContainText('Incorrect');
 });
-
-test
