@@ -1,7 +1,7 @@
-const {test, expect} = require('@playwright/test');
+const { test, expect } = require('@playwright/test');
 
 test.only('Browser Context Playright test', async ({ browser }) => {
-  
+
     const context = await browser.newContext();
     const page = await context.newPage();
     const userName = page.locator('#username');
@@ -13,13 +13,13 @@ test.only('Browser Context Playright test', async ({ browser }) => {
     await userName.type("rahulshetty"); // rahulshettyacademy
     await page.locator("[type='password']").type("learning");
     await signIn.click();
-    console.log (await page.locator("[style*='block']").textContent());
-    await expect (page.locator("[style*='block']")).toContainText('Incorrect');
+    console.log(await page.locator("[style*='block']").textContent());
+    await expect(page.locator("[style*='block']")).toContainText('Incorrect');
 
     //type - fill 
     await userName.fill("");
     await userName.fill("rahulshettyacademy");
     await signIn.click();
-   // console.log (await page.locator(".card-body a").first.textContent()); - another way
-    console.log (await page.locator(".card-body a").nth(0).textContent());
-});
+    // console.log (await page.locator(".card-body a").first.textContent()); - another way
+    console.log(await page.locator(".card-body a").nth(0).textContent());
+}); 
