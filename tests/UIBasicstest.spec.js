@@ -23,3 +23,4 @@ test.only('Browser Context Playright test', async ({ browser }) => {
     // console.log (await page.locator(".card-body a").first.textContent()); - another way
     console.log(await page.locator(".card-body a").nth(0).textContent());
 }); 
+ 
